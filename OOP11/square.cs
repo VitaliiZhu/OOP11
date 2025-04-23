@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace OOP11
 {
-    public class square : rectangle
+    public class Square : Rectangle
     {
-        public square(double ab) : base(ab, ab) 
+        public Square(double ab) : base(ab, ab) 
         {
-            this.ab = ab;
+            
         }
       
-        public override string getName()
+        public override string GetName()
         {
             return "Квадрат";
         }
-        public override double getArea()
+        public override double GetArea()
         {
-            return Math.Pow(ab,2);
+            return Math.Pow(AB,2);
         }
     }
 }

@@ -12,29 +12,29 @@ namespace OOP11
     {
         public Foursider(double ab,double bc, double cd, double ad, double alpha, double beta) 
         {
-            this.ab = ab;
-            this.bc = bc;
-            this.cd = cd;
-            this.ad = ad;
-            this.alpha = alpha;
-            this.beta = beta;
+            AB = ab;
+            BC = bc;
+            CD = cd;
+            AD = ad;
+            Alpha = alpha;
+            Beta = beta;
         }
-        public double ab {  get; set; }
-        public double bc { get; set; }
-        public double cd { get; set; }
-        public double ad { get; set; }
-        public double alpha { get; set; }
-        public double beta { get; set; }
+        public double AB {  get; private set; }
+        public double BC { get; private set; }
+        public double CD { get; private set; }
+        public double AD { get; private set; }
+        public double Alpha { get; private set; }
+        public double Beta { get; private set; }
 
-        public virtual string getName()
+        public virtual string GetName()
         {
             return "Чотирикутник";
         }
-        public virtual double getArea()
+        public virtual double GetArea()
         {
-            alpha *= Math.PI / 180;
-            beta *= Math.PI / 180;
-            return 0.5*ab*bc*Math.Abs(Math.Sin(alpha))+0.5*cd*ad*Math.Abs(Math.Sin(beta));
+            var alphaInRad = Alpha* Math.PI / 180;
+            var betaInRad = Beta* Math.PI / 180;
+            return 0.5*AB*BC*Math.Abs(Math.Sin(alphaInRad))+0.5*CD*AD*Math.Abs(Math.Sin(betaInRad));
         }
         
     }

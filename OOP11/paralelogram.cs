@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace OOP11
 {
-    public class paralelogram : Foursider
+    public class Paralelogram : Foursider
     {
-        public paralelogram(double ab, double bc, double alpha):base(ab,bc,ab,bc,alpha,180-alpha)
+        public Paralelogram(double ab, double bc, double alpha):base(ab,bc,ab,bc,alpha,180-alpha)
         {
-            this.ab = ab;
-            this.bc = bc;
-            this.alpha = alpha;
+           
         }
-        public override  string getName()
+        public override  string GetName()
         {
             return "Паралелограм";
         }
-        public override double getArea()
+        public override double GetArea()
         {
-            alpha *= Math.PI / 180;
-            return ab * (Math.Cos(Math.Abs(90-alpha))*bc);
+            var alphaInRad =Alpha* Math.PI / 180;
+            return AB * (Math.Cos(Math.Abs(90-alphaInRad))*BC);
         }
     }
 }

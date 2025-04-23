@@ -48,13 +48,13 @@ namespace OOP11
                                     else {
                                         if (ab != bc || bc != cd || cd != ad)
                                         {
-                                            rectangle rc = new rectangle(ab,bc);
-                                            MessageBox.Show("Фігура = " + rc.getName() + "\nПлоща = " + rc.getArea());
+                                            Rectangle rc = new Rectangle(ab,bc);
+                                            MessageBox.Show("Фігура = " + rc.GetName() + "\nПлоща = " + rc.GetArea());
                                         }
                                         else
                                         {
-                                            square s = new square(ab);
-                                            MessageBox.Show("Фігура = " + s.getName() + "\nПлоща = " + s.getArea());
+                                            Square s = new Square(ab);
+                                            MessageBox.Show("Фігура = " + s.GetName() + "\nПлоща = " + s.GetArea());
                                         }
                                     }
                                 }
@@ -70,20 +70,20 @@ namespace OOP11
                                         {
                                             if(ab == bc)
                                             {
-                                                rombus rm = new rombus(ab,alpha);
-                                                MessageBox.Show("Фігура = " + rm.getName() + "\nПлоща = " + rm.getArea());
+                                                Rombus rm = new Rombus(ab,alpha);
+                                                MessageBox.Show("Фігура = " + rm.GetName() + "\nПлоща = " + rm.GetArea());
                                             }
                                             else
                                             {
-                                                paralelogram pr = new paralelogram(ab,bc,alpha);
-                                                MessageBox.Show("Фігура = " + pr.getName() + "\nПлоща = " + pr.getArea());
+                                                Paralelogram pr = new Paralelogram(ab,bc,alpha);
+                                                MessageBox.Show("Фігура = " + pr.GetName() + "\nПлоща = " + pr.GetArea());
                                             }
                                         }
                                     }
                                     else
                                     {
                                         Foursider fs = new Foursider(ab,bc,cd,ad,alpha,gamma);
-                                        MessageBox.Show("Фігура = " + fs.getName() + "\nПлоща = " + fs.getArea());
+                                        MessageBox.Show("Фігура = " + fs.GetName() + "\nПлоща = " + fs.GetArea());
                                     }
                                 }
                                 

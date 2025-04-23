@@ -7,23 +7,21 @@ using System.Threading.Tasks;
 
 namespace OOP11
 {
-    public class rombus : paralelogram
+    public class Rombus : Paralelogram
     {
-        public rombus(double ab, double alpha) : base(ab,ab,alpha) 
+        public Rombus(double ab, double alpha) : base(ab,ab,alpha) 
         {
-            this.ab = ab;
-            this.alpha = alpha;
         }
 
-         public override string getName()
+         public override string GetName()
         {
             return "Ромб";
         }
-        public override double getArea()
+        public override double GetArea()
         {
-            var pow = Math.Pow(ab, 2);
-            alpha *= Math.PI / 180;
-            var sin = Math.Sin(alpha);
+            var pow = Math.Pow(AB, 2);
+            var alphaInRad = Alpha * Math.PI / 180;
+            var sin = Math.Sin(alphaInRad);
             return pow * sin;
         }
     }

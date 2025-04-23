@@ -53,12 +53,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Foursider.cs" />
-    <Compile Include="paralelogram.cs" />
+    <Compile Include="Paralelogram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rectangle.cs" />
-    <Compile Include="rombus.cs" />
-    <Compile Include="square.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Rombus.cs" />
+    <Compile Include="Square.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
