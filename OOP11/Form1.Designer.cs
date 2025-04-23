@@ -125,6 +125,8 @@
             this.Controls.Add(this.textBoxAB);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximumSize = new System.Drawing.Size(598, 399);
+            this.MinimumSize = new System.Drawing.Size(598, 399);
             this.Name = "Form1";
             this.Text = "Form";
             this.ResumeLayout(false);

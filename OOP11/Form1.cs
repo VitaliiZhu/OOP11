@@ -23,9 +23,13 @@ namespace OOP11
             {
                 if (double.TryParse(textBoxA.Text, out double alpha) && double.TryParse(textBoxB.Text, out double beta) && double.TryParse(textBoxC.Text, out double gamma) && double.TryParse(textBoxD.Text, out double delta))
                 {
-                    if (alpha <= 0 || beta <= 0 || gamma <= 0 || delta <= 0 || alpha + beta + gamma + delta != 360)
+                    if ( alpha + beta + gamma + delta != 360)
                     {
                         throw new Exception("Сума кутів має бути рівна 360");
+                    }
+                    else if(alpha <= 0 || beta <= 0 || gamma <= 0 || delta <= 0)
+                    {
+                        throw new Exception("Кути мають бути додатними");
                     }
                     else 
                     {
@@ -34,7 +38,7 @@ namespace OOP11
                             if (ab <= 0 || bc <= 0 || cd <= 0 || ad <= 0) { throw new Exception("Сторони мають бути додатніми"); }
                             else
                             {
-                                Foursider fs = new Foursider();
+                                
                                 if(alpha == 90 && beta == 90 &&  gamma == 90 && delta == 90)
                                 {
                                     if (ab != cd || bc != ad)
@@ -44,15 +48,12 @@ namespace OOP11
                                     else {
                                         if (ab != bc || bc != cd || cd != ad)
                                         {
-                                            rectangle rc = new rectangle();
-                                            rc.ab = ab;
-                                            rc.bc = bc;
+                                            rectangle rc = new rectangle(ab,bc);
                                             MessageBox.Show("Фігура = " + rc.getName() + "\nПлоща = " + rc.getArea());
                                         }
                                         else
                                         {
-                                            square s = new square();
-                                            s.ab = ab;
+                                            square s = new square(ab);
                                             MessageBox.Show("Фігура = " + s.getName() + "\nПлоща = " + s.getArea());
                                         }
                                     }
@@ -69,29 +70,19 @@ namespace OOP11
                                         {
                                             if(ab == bc)
                                             {
-                                                rombus rm = new rombus();
-                                                rm.ab = ab;
-                                                rm.alpha = alpha;
+                                                rombus rm = new rombus(ab,alpha);
                                                 MessageBox.Show("Фігура = " + rm.getName() + "\nПлоща = " + rm.getArea());
                                             }
                                             else
                                             {
-                                                paralelogram pr = new paralelogram();
-                                                pr.ab = ab;
-                                                pr.bc = bc;
-                                                pr.alpha = alpha;
+                                                paralelogram pr = new paralelogram(ab,bc,alpha);
                                                 MessageBox.Show("Фігура = " + pr.getName() + "\nПлоща = " + pr.getArea());
                                             }
                                         }
                                     }
                                     else
                                     {
-                                        fs.ab = ab;
-                                        fs.bc = bc;
-                                        fs.cd = cd;
-                                        fs.ad = ad;
-                                        fs.alpha = alpha;
-                                        fs.beta = gamma;
+                                        Foursider fs = new Foursider(ab,bc,cd,ad,alpha,gamma);
                                         MessageBox.Show("Фігура = " + fs.getName() + "\nПлоща = " + fs.getArea());
                                     }
                                 }
