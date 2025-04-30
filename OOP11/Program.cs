@@ -16,7 +16,7 @@ namespace OOP11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Control());
+            Application.Run(new Form1());
         }
     }
 }

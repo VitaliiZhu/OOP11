@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace OOP11
 {
-    public partial class NewShape : Form
+    public partial class Form1 : Form
     {
-        public NewShape()
+        public Form1()
         {
             InitializeComponent();
-            
         }
-        public NewShape(Control parent)
-        {
-            InitializeComponent();
-            this.parent = parent;
-        }
-        public Foursider obj;
-        public bool hasShape = false;
-        private Control parent;
+
         private void buttonTask_Click(object sender, EventArgs e)
         {
             try
@@ -46,7 +38,7 @@ namespace OOP11
                             if (ab <= 0 || bc <= 0 || cd <= 0 || ad <= 0) { throw new Exception("Сторони мають бути додатніми"); }
                             else
                             {
-                                hasShape = true;
+                                
                                 if(alpha == 90 && beta == 90 &&  gamma == 90 && delta == 90)
                                 {
                                     if (ab != cd || bc != ad)
@@ -56,11 +48,13 @@ namespace OOP11
                                     else {
                                         if (ab != bc || bc != cd || cd != ad)
                                         {
-                                            obj = new Rectangle(ab,bc);
+                                            Rectangle rc = new Rectangle(ab,bc);
+                                            MessageBox.Show("Фігура = " + rc.GetName() + "\nПлоща = " + rc.GetArea());
                                         }
                                         else
                                         {
-                                            obj = new Square(ab);
+                                            Square s = new Square(ab);
+                                            MessageBox.Show("Фігура = " + s.GetName() + "\nПлоща = " + s.GetArea());
                                         }
                                     }
                                 }
@@ -76,23 +70,23 @@ namespace OOP11
                                         {
                                             if(ab == bc)
                                             {
-                                                obj = new Rombus(ab,alpha);
+                                                Rombus rm = new Rombus(ab,alpha);
+                                                MessageBox.Show("Фігура = " + rm.GetName() + "\nПлоща = " + rm.GetArea());
                                             }
                                             else
                                             {
-                                                obj = new Paralelogram(ab,bc,alpha);
+                                                Paralelogram pr = new Paralelogram(ab,bc,alpha);
+                                                MessageBox.Show("Фігура = " + pr.GetName() + "\nПлоща = " + pr.GetArea());
                                             }
                                         }
                                     }
                                     else
                                     {
-                                        obj = new Foursider(ab,bc,cd,ad,alpha,gamma);
-                                        
+                                        Foursider fs = new Foursider(ab,bc,cd,ad,alpha,gamma);
+                                        MessageBox.Show("Фігура = " + fs.GetName() + "\nПлоща = " + fs.GetArea());
                                     }
                                 }
-                                MessageBox.Show("Додано фігуру: " + obj.GetName() + "\nЗ площею = " + obj.GetArea());
-                                parent.AddShape(obj);
-                                this.Close();
+                                
                             }
                         }
                         else throw new Exception("Введіть коректні значення сторін");

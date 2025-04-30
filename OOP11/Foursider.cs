@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OOP11
 {
-    public class Foursider :IClonable<Foursider>,IComparable<Foursider>
+    public class Foursider
     {
         public Foursider(double ab,double bc, double cd, double ad, double alpha, double beta) 
         {
@@ -25,10 +25,7 @@ namespace OOP11
         public double AD { get; private set; }
         public double Alpha { get; private set; }
         public double Beta { get; private set; }
-        public override string  ToString()
-        {
-            return GetName()+", площа = "+GetArea();
-        }
+
         public virtual string GetName()
         {
             return "Чотирикутник";
@@ -38,16 +35,6 @@ namespace OOP11
             var alphaInRad = Alpha* Math.PI / 180;
             var betaInRad = Beta* Math.PI / 180;
             return 0.5*AB*BC*Math.Abs(Math.Sin(alphaInRad))+0.5*CD*AD*Math.Abs(Math.Sin(betaInRad));
-        }
-        public int CompareTo(Foursider obj)
-        {
-            if (GetArea() > obj.GetArea()) return 1;
-            else if(GetArea() < obj.GetArea())return -1;
-            else return 0;
-        }
-        public Foursider Clone()
-        {
-            return this;
         }
         
     }
