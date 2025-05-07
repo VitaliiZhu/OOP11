@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OOP11
 {
-    public class Foursider :IClonable<Foursider>,IComparable<Foursider>
+    public class Foursider :IClonable<Foursider>,IComparable<Foursider>,IShape
     {
         public Foursider(double ab,double bc, double cd, double ad, double alpha, double beta) 
         {

@@ -52,6 +52,7 @@
     <Compile Include="Control.Designer.cs">
       <DependentUpon>Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="IShape.cs" />
     <Compile Include="NewShape.cs">
       <SubType>Form</SubType>
     </Compile>
