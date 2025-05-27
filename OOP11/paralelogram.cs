@@ -22,5 +22,9 @@ namespace OOP11
             var alphaInRad =Alpha* Math.PI / 180;
             return AB * (Math.Cos(Math.Abs(90-alphaInRad))*BC);
         }
+        public override Foursider Clone()
+        {
+            return new Paralelogram(AB, BC, Alpha);
+        }
     }
 }

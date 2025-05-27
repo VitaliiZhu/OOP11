@@ -24,5 +24,9 @@ namespace OOP11
             var sin = Math.Sin(alphaInRad);
             return pow * sin;
         }
+        public override Foursider Clone()
+        {
+            return new Rombus(AB, Alpha);
+        }
     }
 }

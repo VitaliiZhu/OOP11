@@ -12,11 +12,11 @@ namespace OOP11
 {
     public partial class Control : Form
     {
-        List<Foursider> shapes;
+        QuadCollection shapes = new QuadCollection();
         public Control()
         {
             InitializeComponent();
-            shapes = new List<Foursider>();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -27,56 +27,112 @@ namespace OOP11
         }
         public void AddShape(Foursider shape)
         {
-            shapes.Add(shape);
+            shapes.list.Push(shape);
+            shapes.stack.Push(shape);
+            List<Foursider> tempList = new List<Foursider>(shapes.list.Reverse()); // Preserve stack order
             listBox1.DataSource = null;
-            listBox1.DataSource = shapes;
+            listBox1.DataSource = tempList;
             listBox1.Update();
-
+            listBox2.DataSource = null;
+            listBox2.DataSource = tempList;
+            listBox2.Update();
         }
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            int n = shapes.Count;
-            for (int i = 0; i < n - 1; i++)
+            List<Foursider> tempList = new List<Foursider>(shapes.list.Reverse());
+            tempList.Sort();  // Ensure Foursider implements IComparable<Foursider>
+
+            shapes.list.Clear();
+            foreach (Foursider obj in tempList)
             {
-                for (int j = 0; j < n - i - 1; j++)
-                {
-                    int rez = shapes[j].CompareTo(shapes[j + 1]);
-                    if (rez ==1)
-                    {
-                        Foursider temp = shapes[j];
-                        shapes[j] = shapes[j + 1];
-                        shapes[j + 1] = temp;
-                    }
-                }
+                shapes.list.Push(obj);
             }
+
             listBox1.DataSource = null;
-            listBox1.DataSource = shapes;
+            listBox1.DataSource = tempList;
             listBox1.Update();
-
-
         }
 
         private void btnClone_Click(object sender, EventArgs e)
         {
-            List<Foursider> clones =  new List<Foursider>();
-            for(int i = 0; i < shapes.Count; i++)
-            {
-               clones.Add( shapes[i].Clone());
-            }
-            for (int i = 0;i < clones.Count; i++)
-            {
-                Random random = new Random();
-                shapes.Insert( random.Next(0, i + 1), clones[i]);
-            }
-            listBox1.DataSource = null;
-            listBox1.DataSource = shapes;
-            listBox1.Update();
+            List<Foursider> tempList = new List<Foursider>(shapes.list.Reverse());
+            List<Foursider> clones = new List<Foursider>();
 
+            foreach (Foursider shape in tempList)
+            {
+                clones.Add(shape.Clone());
+            }
+
+            Random random = new Random();
+            foreach (Foursider clone in clones)
+            {
+                tempList.Insert(random.Next(0, tempList.Count), clone);
+            }
+
+            shapes.list.Clear();
+            foreach (Foursider obj in tempList)
+            {
+                shapes.list.Push(obj);
+            }
+
+            listBox1.DataSource = null;
+            listBox1.DataSource = tempList;
+            listBox1.Update();
         }
+
 
         private void Control_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCloneStack_Click(object sender, EventArgs e)
+        {
+
+            object[] tempArray = shapes.stack.ToArray();
+            List<Foursider> tempList = tempArray.Cast<Foursider>().ToList();
+            List<Foursider> clones = new List<Foursider>();
+
+            foreach (Foursider shape in tempList)
+            {
+                clones.Add(shape.Clone());
+            }
+
+            Random random = new Random();
+            foreach (Foursider clone in clones)
+            {
+                tempList.Insert(random.Next(0, tempList.Count), clone);
+            }
+
+            shapes.stack.Clear();
+            foreach (Foursider obj in tempList)
+            {
+                shapes.stack.Push(obj);
+            }
+
+            listBox2.DataSource = null;
+            listBox2.DataSource = tempList;
+            listBox2.Update();
+
+        }
+
+        private void btnSortStack_Click(object sender, EventArgs e)
+        {
+            object[] tempArray = shapes.stack.ToArray();
+            List<Foursider> tempList = tempArray.Cast<Foursider>().ToList();
+
+            tempList.Sort(); // Ensure Foursider implements IComparable<Foursider>
+
+            shapes.stack.Clear();
+            foreach (Foursider obj in tempList)
+            {
+                shapes.stack.Push(obj);
+            }
+
+            listBox2.DataSource = null;
+            listBox2.DataSource = tempList;
+            listBox2.Update();
 
         }
     }

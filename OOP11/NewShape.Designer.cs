@@ -46,6 +46,8 @@
             this.textBoxAB.Name = "textBoxAB";
             this.textBoxAB.Size = new System.Drawing.Size(100, 22);
             this.textBoxAB.TabIndex = 0;
+            this.textBoxAB.Text = "5";
+            this.textBoxAB.TextChanged += new System.EventHandler(this.textBoxAB_TextChanged);
             // 
             // textBoxB
             // 
@@ -53,6 +55,7 @@
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(100, 22);
             this.textBoxB.TabIndex = 1;
+            this.textBoxB.Text = "90";
             // 
             // textBoxA
             // 
@@ -60,6 +63,7 @@
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.Size = new System.Drawing.Size(100, 22);
             this.textBoxA.TabIndex = 2;
+            this.textBoxA.Text = "90";
             // 
             // textBoxD
             // 
@@ -67,6 +71,7 @@
             this.textBoxD.Name = "textBoxD";
             this.textBoxD.Size = new System.Drawing.Size(100, 22);
             this.textBoxD.TabIndex = 5;
+            this.textBoxD.Text = "90";
             // 
             // textBoxC
             // 
@@ -74,6 +79,7 @@
             this.textBoxC.Name = "textBoxC";
             this.textBoxC.Size = new System.Drawing.Size(100, 22);
             this.textBoxC.TabIndex = 4;
+            this.textBoxC.Text = "90";
             // 
             // textBoxCD
             // 
@@ -81,6 +87,7 @@
             this.textBoxCD.Name = "textBoxCD";
             this.textBoxCD.Size = new System.Drawing.Size(100, 22);
             this.textBoxCD.TabIndex = 3;
+            this.textBoxCD.Text = "5";
             // 
             // textBoxAD
             // 
@@ -88,6 +95,7 @@
             this.textBoxAD.Name = "textBoxAD";
             this.textBoxAD.Size = new System.Drawing.Size(100, 22);
             this.textBoxAD.TabIndex = 8;
+            this.textBoxAD.Text = "5";
             // 
             // textBoxBC
             // 
@@ -95,6 +103,7 @@
             this.textBoxBC.Name = "textBoxBC";
             this.textBoxBC.Size = new System.Drawing.Size(100, 22);
             this.textBoxBC.TabIndex = 7;
+            this.textBoxBC.Text = "5";
             // 
             // buttonTask
             // 
@@ -106,7 +115,7 @@
             this.buttonTask.UseVisualStyleBackColor = true;
             this.buttonTask.Click += new System.EventHandler(this.buttonTask_Click);
             // 
-            // Form1
+            // NewShape
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,7 +136,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(598, 399);
             this.MinimumSize = new System.Drawing.Size(598, 399);
-            this.Name = "Form1";
+            this.Name = "NewShape";
             this.Text = "Form";
             this.ResumeLayout(false);
             this.PerformLayout();

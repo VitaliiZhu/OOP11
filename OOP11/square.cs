@@ -22,5 +22,9 @@ namespace OOP11
         {
             return Math.Pow(AB,2);
         }
+        public override Foursider Clone()
+        {
+            return new Square(AB);
+        }
     }
 }

@@ -106,5 +106,10 @@ namespace OOP11
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void textBoxAB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,5 +22,9 @@ namespace OOP11
         {
             return AB*BC;
         }
+        public override Foursider Clone()
+        {
+            return new Rectangle(AB, BC);
+        }
     }
 }

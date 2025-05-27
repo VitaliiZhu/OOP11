@@ -45,9 +45,9 @@ namespace OOP11
             else if(GetArea() < obj.GetArea())return -1;
             else return 0;
         }
-        public Foursider Clone()
+        public virtual Foursider Clone()
         {
-            return this;
+            return new Foursider(AB,BC,CD,AD,Alpha,Beta);
         }
         
     }
